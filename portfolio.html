@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>แฟ้มสะสมผลงาน | นาย ภคพล พฤกษ์เพิ่มพูล</title>
 
 <style>
@@ -49,6 +50,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -94,7 +96,10 @@ p {
     text-align: center;
 }
 
+/* ========================= */
 /* หน้าคำนำ */
+/* ========================= */
+
 .intro-text {
     background: #f4faff;
     padding: 25px;
@@ -107,7 +112,10 @@ p {
     text-indent: 2em;
 }
 
-/* รูปโปรไฟล์หน้าแนะนำตัว */
+/* ========================= */
+/* รูปโปรไฟล์ */
+/* ========================= */
+
 .profile-image {
     width: 170px;
     height: 170px;
@@ -119,7 +127,10 @@ p {
     box-shadow: 0 8px 20px rgba(150, 190, 220, 0.25);
 }
 
+/* ========================= */
 /* กล่องข้อมูล */
+/* ========================= */
+
 .info-box {
     background: #f8fcff;
     padding: 25px;
@@ -151,7 +162,10 @@ p {
     color: #52677a;
 }
 
+/* ========================= */
 /* กล่องมหาวิทยาลัย */
+/* ========================= */
+
 .university-box {
     background: #f4faff;
     padding: 25px;
@@ -176,7 +190,10 @@ p {
     text-indent: 2em;
 }
 
+/* ========================= */
 /* กล่องผลงาน */
+/* ========================= */
+
 .project-card {
     background: #f8fcff;
     padding: 25px;
@@ -201,7 +218,48 @@ p {
     margin-bottom: 12px;
 }
 
+/* ========================= */
+/* รูปภาพเกียรติบัตร */
+/* ========================= */
+
+.project-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    border: 3px solid #e4f2fa;
+    box-shadow: 0 5px 15px rgba(150, 190, 220, 0.15);
+}
+
+/* ========================= */
+/* ทักษะ */
+/* ========================= */
+
+.skills-title {
+    color: #6b9fc0;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.skills-list {
+    text-align: left;
+    padding-left: 25px;
+    margin-bottom: 5px;
+}
+
+.skills-list li {
+    font-size: 16px;
+    line-height: 2;
+    color: #52677a;
+}
+
+/* ========================= */
 /* ปุ่ม */
+/* ========================= */
+
 .button-area {
     display: flex;
     justify-content: center;
@@ -240,7 +298,10 @@ p {
     background: #c5dce8;
 }
 
+/* ========================= */
 /* จุดบอกหน้า */
+/* ========================= */
+
 .dots {
     display: flex;
     justify-content: center;
@@ -262,8 +323,12 @@ p {
     border-radius: 10px;
 }
 
+/* ========================= */
 /* มือถือ */
+/* ========================= */
+
 @media (max-width: 600px) {
+
     body {
         padding: 15px;
     }
@@ -299,6 +364,18 @@ p {
         width: 100%;
         text-align: center;
     }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-image {
+        border-radius: 10px;
+    }
+
+    .skills-list li {
+        font-size: 15px;
+    }
 }
 </style>
 </head>
@@ -310,6 +387,7 @@ p {
     <!-- ========================= -->
     <!-- หน้า 1 : คำนำ -->
     <!-- ========================= -->
+
     <section class="page active" id="page1">
 
         <div class="page-number">PORTFOLIO • PAGE 1</div>
@@ -321,6 +399,7 @@ p {
         </p>
 
         <div class="intro-text">
+
             <h3 class="center">คำนำ</h3>
 
             <p>
@@ -340,12 +419,15 @@ p {
                 <strong>จัดทำโดย</strong><br>
                 นาย ภคพล พฤกษ์เพิ่มพูล
             </p>
+
         </div>
 
         <div class="button-area">
+
             <button class="btn" onclick="nextPage()">
                 ถัดไป →
             </button>
+
         </div>
 
     </section>
@@ -354,13 +436,13 @@ p {
     <!-- ========================= -->
     <!-- หน้า 2 : แนะนำตัว -->
     <!-- ========================= -->
+
     <section class="page" id="page2">
 
         <div class="page-number">PORTFOLIO • PAGE 2</div>
 
         <h2>แนะนำตัว</h2>
 
-        <!-- รูปโปรไฟล์ตรงกลาง -->
         <img
             src="294E92C6-3C95-4040-8731-A2213CCE2DB4.jpeg"
             alt="รูปโปรไฟล์ นาย ภคพล พฤกษ์เพิ่มพูล"
@@ -371,32 +453,44 @@ p {
 
             <div class="info-row">
                 <div class="info-label">ชื่อ-สกุล</div>
-                <div class="info-value">นาย ภคพล พฤกษ์เพิ่มพูล</div>
+                <div class="info-value">
+                    นาย ภคพล พฤกษ์เพิ่มพูล
+                </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">ชื่อเล่น</div>
-                <div class="info-value">โอม</div>
+                <div class="info-value">
+                    โอม
+                </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">วันเกิด</div>
-                <div class="info-value">26 สิงหาคม 2552</div>
+                <div class="info-value">
+                    26 สิงหาคม 2552
+                </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">อายุ</div>
-                <div class="info-value">17 ปี</div>
+                <div class="info-value">
+                    17 ปี
+                </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">ระดับการศึกษา</div>
-                <div class="info-value">ชั้นมัธยมศึกษาปีที่ 6</div>
+                <div class="info-value">
+                    ชั้นมัธยมศึกษาปีที่ 6
+                </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">สายการเรียน</div>
-                <div class="info-value">เตรียมวิศวกรรมศาสตร์</div>
+                <div class="info-value">
+                    เตรียมวิศวกรรมศาสตร์
+                </div>
             </div>
 
             <div class="info-row">
@@ -418,6 +512,7 @@ p {
         </div>
 
         <div class="button-area">
+
             <button class="btn back" onclick="prevPage()">
                 ← ย้อนกลับ
             </button>
@@ -425,6 +520,7 @@ p {
             <button class="btn" onclick="nextPage()">
                 ถัดไป →
             </button>
+
         </div>
 
     </section>
@@ -433,6 +529,7 @@ p {
     <!-- ========================= -->
     <!-- หน้า 3 : มหาวิทยาลัย -->
     <!-- ========================= -->
+
     <section class="page" id="page3">
 
         <div class="page-number">PORTFOLIO • PAGE 3</div>
@@ -474,6 +571,7 @@ p {
         </div>
 
         <div class="button-area">
+
             <button class="btn back" onclick="prevPage()">
                 ← ย้อนกลับ
             </button>
@@ -481,6 +579,7 @@ p {
             <button class="btn" onclick="nextPage()">
                 ถัดไป →
             </button>
+
         </div>
 
     </section>
@@ -489,6 +588,7 @@ p {
     <!-- ========================= -->
     <!-- หน้า 4 : ผลงาน -->
     <!-- ========================= -->
+
     <section class="page" id="page4">
 
         <div class="page-number">PORTFOLIO • PAGE 4</div>
@@ -499,47 +599,148 @@ p {
             ผลงานและกิจกรรมที่ภาคภูมิใจ
         </p>
 
+
+        <!-- ========================= -->
         <!-- ผลงานที่ 1 -->
+        <!-- ========================= -->
+
         <div class="project-card">
 
             <span class="project-number">ผลงานที่ 1</span>
 
-            <h3>โครงงานวิทยาศาสตร์</h3>
+            <h3>
+                เข้าร่วมการแข่งขันคิดเลขเร็ว
+            </h3>
+
+            <img
+                src="85A6F84F-9418-4FDF-80BD-DA79DE2DE0DE.jpeg"
+                alt="เกียรติบัตรการแข่งขันคิดเลขเร็ว"
+                class="project-image"
+            >
 
             <p>
-                <strong>ชื่อผลงาน:</strong>
-                [กรอกชื่อโครงงานวิทยาศาสตร์]
+                <strong>ชื่อกิจกรรม:</strong><br>
+                เข้าร่วมการแข่งขันคิดเลขเร็ว
+                ระดับมัธยมศึกษาตอนปลาย
             </p>
 
             <p>
-                <strong>รายละเอียด:</strong>
-                [เขียนอธิบายเกี่ยวกับโครงงาน
-                และสิ่งที่ได้เรียนรู้จากการทำงาน]
+                <strong>รายละเอียด:</strong><br>
+                เข้าร่วมการแข่งขันคิดเลขเร็ว ระดับมัธยมศึกษาตอนปลาย
+                เนื่องในวันสัปดาห์คณิตศาสตร์สู่ความเป็นเลิศ
+                ประจำปีการศึกษา ๒๕๖๙
+                ระหว่างวันที่ ๖ - ๙ กรกฎาคม ๒๕๖๙
             </p>
+
+            <p class="skills-title">
+                ทักษะที่ได้รับ
+            </p>
+
+            <ul class="skills-list">
+
+                <li>
+                    ทักษะการคิดคำนวณและการแก้โจทย์คณิตศาสตร์
+                </li>
+
+                <li>
+                    ทักษะการคิดวิเคราะห์และการแก้ปัญหา
+                </li>
+
+                <li>
+                    ทักษะการคิดอย่างรวดเร็วและแม่นยำ
+                </li>
+
+                <li>
+                    ทักษะการจัดการเวลาในการแข่งขัน
+                </li>
+
+                <li>
+                    ทักษะการมีสมาธิและความรอบคอบ
+                </li>
+
+                <li>
+                    ทักษะการฝึกฝนและพัฒนาตนเอง
+                </li>
+
+            </ul>
 
         </div>
 
+
+        <!-- ========================= -->
         <!-- ผลงานที่ 2 -->
+        <!-- ========================= -->
+
         <div class="project-card">
 
             <span class="project-number">ผลงานที่ 2</span>
 
-            <h3>กิจกรรม / เกียรติบัตร</h3>
+            <h3>
+                เป็นวิทยากรจัดแสดงนิทรรศการวิทยาศาสตร์และเทคโนโลยี
+            </h3>
+
+            <img
+                src="E91C72D6-779B-462A-AC68-3FC7B6EEDD9F.jpeg"
+                alt="เกียรติบัตรวิทยากรจัดแสดงนิทรรศการวิทยาศาสตร์และเทคโนโลยี"
+                class="project-image"
+            >
 
             <p>
-                <strong>ชื่อผลงาน:</strong>
-                [กรอกชื่อกิจกรรมหรือเกียรติบัตร]
+                <strong>ชื่อกิจกรรม:</strong><br>
+                เป็นวิทยากรจัดแสดงนิทรรศการวิทยาศาสตร์และเทคโนโลยี
             </p>
 
             <p>
-                <strong>รายละเอียด:</strong>
-                [เขียนอธิบายเกี่ยวกับกิจกรรม
-                และประสบการณ์ที่ได้รับ]
+                <strong>รายละเอียด:</strong><br>
+                เป็นวิทยากรจัดแสดงนิทรรศการวิทยาศาสตร์และเทคโนโลยี
+                เนื่องในงานวันวิทยาศาสตร์แห่งชาติ
+                ประจำปีการศึกษา ๒๕๖๙
+                ภายใต้แนวคิด
+                <strong>Intelligence in Science for a Sustainable Future</strong>
+                วิทยาศาสตร์ฉลาดรู้ ก้าวสู่อนาคตที่ยั่งยืน
             </p>
+
+            <p class="skills-title">
+                ทักษะที่ได้รับ
+            </p>
+
+            <ul class="skills-list">
+
+                <li>
+                    ทักษะการสื่อสารและการนำเสนอ
+                </li>
+
+                <li>
+                    ทักษะการถ่ายทอดความรู้ทางวิทยาศาสตร์
+                </li>
+
+                <li>
+                    ทักษะการทำงานร่วมกับผู้อื่น
+                </li>
+
+                <li>
+                    ทักษะการวางแผนและจัดเตรียมนิทรรศการ
+                </li>
+
+                <li>
+                    ทักษะการแก้ปัญหาเฉพาะหน้า
+                </li>
+
+                <li>
+                    ทักษะความรับผิดชอบและความกล้าแสดงออก
+                </li>
+
+            </ul>
 
         </div>
 
+
+        <!-- ========================= -->
+        <!-- ปุ่มนำทาง -->
+        <!-- ========================= -->
+
         <div class="button-area">
+
             <button class="btn back" onclick="prevPage()">
                 ← ย้อนกลับ
             </button>
@@ -547,17 +748,23 @@ p {
             <a href="index.html" class="btn">
                 🏠 กลับหน้าหลัก
             </a>
+
         </div>
 
     </section>
 
 
+    <!-- ========================= -->
     <!-- จุดบอกหน้าปัจจุบัน -->
+    <!-- ========================= -->
+
     <div class="dots">
+
         <span class="dot active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
+
     </div>
 
 </div>
@@ -584,20 +791,25 @@ function showPage(pageNumber) {
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 function nextPage() {
+
     if (currentPage < totalPages) {
         currentPage++;
         showPage(currentPage);
     }
+
 }
 
 function prevPage() {
+
     if (currentPage > 1) {
         currentPage--;
         showPage(currentPage);
     }
+
 }
 </script>
 
