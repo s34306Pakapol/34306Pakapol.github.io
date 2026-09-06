@@ -24,13 +24,11 @@ body {
     padding: 30px 15px;
 }
 
-/* กล่องหลัก */
 .container {
     max-width: 850px;
     margin: 0 auto;
 }
 
-/* แต่ละหน้า */
 .page {
     display: none;
     background: rgba(255, 255, 255, 0.95);
@@ -57,7 +55,6 @@ body {
     }
 }
 
-/* หัวข้อ */
 .page-number {
     text-align: center;
     color: #9bbfd5;
@@ -98,18 +95,6 @@ p {
 }
 
 /* หน้าคำนำ */
-.cover-icon {
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-    background: #dff3ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-}
-
 .intro-text {
     background: #f4faff;
     padding: 25px;
@@ -120,6 +105,18 @@ p {
 
 .intro-text p {
     text-indent: 2em;
+}
+
+/* รูปโปรไฟล์หน้าแนะนำตัว */
+.profile-image {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(150, 190, 220, 0.25);
 }
 
 /* กล่องข้อมูล */
@@ -284,6 +281,11 @@ p {
         font-size: 22px;
     }
 
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+
     .info-row {
         flex-direction: column;
         gap: 3px;
@@ -311,8 +313,6 @@ p {
     <section class="page active" id="page1">
 
         <div class="page-number">PORTFOLIO • PAGE 1</div>
-
-        <div class="cover-icon">🌷</div>
 
         <h1>แฟ้มสะสมผลงาน</h1>
 
@@ -360,6 +360,13 @@ p {
 
         <h2>แนะนำตัว</h2>
 
+        <!-- รูปโปรไฟล์ตรงกลาง -->
+        <img
+            src="294E92C6-3C95-4040-8731-A2213CCE2DB4.jpeg"
+            alt="รูปโปรไฟล์ นาย ภคพล พฤกษ์เพิ่มพูล"
+            class="profile-image"
+        >
+
         <div class="info-box">
 
             <div class="info-row">
@@ -374,7 +381,7 @@ p {
 
             <div class="info-row">
                 <div class="info-label">วันเกิด</div>
-                <div class="info-value">26 สิงหาคน 2552</div>
+                <div class="info-value">26 สิงหาคม 2552</div>
             </div>
 
             <div class="info-row">
@@ -404,7 +411,7 @@ p {
                 <div class="info-label">ข้อมูลการติดต่อ</div>
                 <div class="info-value">
                     เบอร์โทรศัพท์: [กรอกเบอร์โทรศัพท์]<br>
-                    Gmail:pakapol.260852@gmail.com
+                    Gmail: pakapol.260852@gmail.com
                 </div>
             </div>
 
@@ -562,21 +569,17 @@ const totalPages = 4;
 
 function showPage(pageNumber) {
 
-    // ซ่อนทุกหน้า
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
     });
 
-    // แสดงหน้าที่เลือก
     document.getElementById("page" + pageNumber)
         .classList.add("active");
 
-    // เปลี่ยนจุดบอกหน้า
     document.querySelectorAll(".dot").forEach((dot, index) => {
         dot.classList.toggle("active", index === pageNumber - 1);
     });
 
-    // เลื่อนขึ้นด้านบน
     window.scrollTo({
         top: 0,
         behavior: "smooth"
