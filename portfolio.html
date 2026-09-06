@@ -2,34 +2,602 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟมสะสมงานของฉัน ้ </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>แฟ้มสะสมผลงาน | นาย ภคพล พฤกษ์เพิ่มพูล</title>
+
 <style>
-body { font-family: sans-serif; background-color: #f4f7f6; text-align: center;
-padding: 30px; }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Tahoma", sans-serif;
+    background: linear-gradient(135deg, #eaf7ff, #fdf6ff);
+    color: #52677a;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* กล่องหลัก */
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* แต่ละหน้า */
+.page {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(150, 180, 200, 0.18);
+    border: 1px solid #ffffff;
+    min-height: 650px;
+    animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* หัวข้อ */
+.page-number {
+    text-align: center;
+    color: #9bbfd5;
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    text-align: center;
+    color: #49677d;
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6b9fc0;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h3 {
+    color: #6b9fc0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 12px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* หน้าคำนำ */
+.cover-icon {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background: #dff3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.intro-text {
+    background: #f4faff;
+    padding: 25px;
+    border-radius: 18px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.intro-text p {
+    text-indent: 2em;
+}
+
+/* กล่องข้อมูล */
+.info-box {
+    background: #f8fcff;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e4f2fa;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e8f1f5;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6b9fc0;
+    font-weight: bold;
+    min-width: 145px;
+}
+
+.info-value {
+    color: #52677a;
+}
+
+/* กล่องมหาวิทยาลัย */
+.university-box {
+    background: #f4faff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e4f2fa;
+}
+
+.university-box p {
+    margin-bottom: 8px;
+}
+
+.goal-box {
+    background: #fff8fc;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #f7e5f0;
+}
+
+.goal-box p {
+    text-align: left;
+    text-indent: 2em;
+}
+
+/* กล่องผลงาน */
+.project-card {
+    background: #f8fcff;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 20px;
+    border: 1px solid #e4f2fa;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(150, 190, 220, 0.15);
+}
+
+.project-number {
+    display: inline-block;
+    background: #dff3ff;
+    color: #6b9fc0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* ปุ่ม */
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    background: #a9d8ee;
+    color: #ffffff;
+    padding: 13px 28px;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-family: "Tahoma", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(150, 190, 220, 0.2);
+}
+
+.btn:hover {
+    background: #8fc7e2;
+    transform: translateY(-3px);
+}
+
+.btn.back {
+    background: #d8e8f0;
+    color: #6b8495;
+}
+
+.btn.back:hover {
+    background: #c5dce8;
+}
+
+/* จุดบอกหน้า */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    background: #d5e6ef;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #a9d8ee;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* มือถือ */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .page {
+        padding: 30px 20px;
+        min-height: 650px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .info-label {
+        min-width: auto;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <div class="container">
-<h1> แฟมสะสมงาน ้ (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
-<!-- กล่องผลงานชนที่ ้ิ 1 -->
-<div class="project-card">
-<h3>1. โครงงาน/ชนงานวิทยาศาสตร์ค;านวณ ิ้ </h3>
-<p>รายละเอียดชนงาน ิ้ : เขียนอธิบายสันๆ ว่าท;าอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง ้ </p>
+
+    <!-- ========================= -->
+    <!-- หน้า 1 : คำนำ -->
+    <!-- ========================= -->
+    <section class="page active" id="page1">
+
+        <div class="page-number">PORTFOLIO • PAGE 1</div>
+
+        <div class="cover-icon">🌷</div>
+
+        <h1>แฟ้มสะสมผลงาน</h1>
+
+        <p class="center">
+            <strong>Portfolio</strong>
+        </p>
+
+        <div class="intro-text">
+            <h3 class="center">คำนำ</h3>
+
+            <p>
+                แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว
+                ประวัติการศึกษา ผลงาน และกิจกรรมที่ข้าพเจ้าได้เข้าร่วม
+                โดยมีจุดมุ่งหมายเพื่อแสดงให้เห็นถึงความรู้ ความสามารถ
+                ทักษะ และประสบการณ์ที่ได้สั่งสมมา
+            </p>
+
+            <p>
+                ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้
+                จะเป็นส่วนหนึ่งในการแนะนำตัวและแสดงถึงความตั้งใจ
+                ในการศึกษาต่อและพัฒนาตนเองในอนาคต
+            </p>
+
+            <p class="center">
+                <strong>จัดทำโดย</strong><br>
+                นาย ภคพล พฤกษ์เพิ่มพูล
+            </p>
+        </div>
+
+        <div class="button-area">
+            <button class="btn" onclick="nextPage()">
+                ถัดไป →
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- หน้า 2 : แนะนำตัว -->
+    <!-- ========================= -->
+    <section class="page" id="page2">
+
+        <div class="page-number">PORTFOLIO • PAGE 2</div>
+
+        <h2>แนะนำตัว</h2>
+
+        <div class="info-box">
+
+            <div class="info-row">
+                <div class="info-label">ชื่อ-สกุล</div>
+                <div class="info-value">นาย ภคพล พฤกษ์เพิ่มพูล</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">ชื่อเล่น</div>
+                <div class="info-value">โอม</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">วันเกิด</div>
+                <div class="info-value">26 สิงหาคน 2552</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">อายุ</div>
+                <div class="info-value">17 ปี</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">ระดับการศึกษา</div>
+                <div class="info-value">ชั้นมัธยมศึกษาปีที่ 6</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">สายการเรียน</div>
+                <div class="info-value">เตรียมวิศวกรรมศาสตร์</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">เป้าหมายในชีวิต</div>
+                <div class="info-value">
+                    ศึกษาต่อในระดับมหาวิทยาลัย
+                    และนำความรู้ไปต่อยอดธุรกิจของตนเอง
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">ข้อมูลการติดต่อ</div>
+                <div class="info-value">
+                    เบอร์โทรศัพท์: [กรอกเบอร์โทรศัพท์]<br>
+                    Gmail:pakapol.260852@gmail.com
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-area">
+            <button class="btn back" onclick="prevPage()">
+                ← ย้อนกลับ
+            </button>
+
+            <button class="btn" onclick="nextPage()">
+                ถัดไป →
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- หน้า 3 : มหาวิทยาลัย -->
+    <!-- ========================= -->
+    <section class="page" id="page3">
+
+        <div class="page-number">PORTFOLIO • PAGE 3</div>
+
+        <h2>มหาวิทยาลัยที่สนใจศึกษาต่อ</h2>
+
+        <div class="university-box">
+
+            <h3>🎓 มหาวิทยาลัยธรรมศาสตร์</h3>
+
+            <p>
+                <strong>วิทยาเขต:</strong>
+                ท่าพระจันทร์
+            </p>
+
+            <p>
+                <strong>คณะที่สนใจ:</strong>
+                คณะบริหารธุรกิจ
+            </p>
+
+            <p>
+                <strong>สาขาที่สนใจ:</strong>
+                การค้าระหว่างประเทศ
+            </p>
+
+        </div>
+
+        <div class="goal-box">
+
+            <h3 class="center">เป้าหมายในชีวิต</h3>
+
+            <p>
+                ข้าพเจ้ามีเป้าหมายศึกษาต่อในคณะบริหารธุรกิจ
+                สาขาการค้าระหว่างประเทศ เพื่อพัฒนาองค์ความรู้
+                ไปใช้ในการทำงานอย่างมีประสิทธิภาพ
+                และนำความรู้ไปต่อยอดธุรกิจของตนเอง
+            </p>
+
+        </div>
+
+        <div class="button-area">
+            <button class="btn back" onclick="prevPage()">
+                ← ย้อนกลับ
+            </button>
+
+            <button class="btn" onclick="nextPage()">
+                ถัดไป →
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- หน้า 4 : ผลงาน -->
+    <!-- ========================= -->
+    <section class="page" id="page4">
+
+        <div class="page-number">PORTFOLIO • PAGE 4</div>
+
+        <h2>ผลงาน</h2>
+
+        <p class="center">
+            ผลงานและกิจกรรมที่ภาคภูมิใจ
+        </p>
+
+        <!-- ผลงานที่ 1 -->
+        <div class="project-card">
+
+            <span class="project-number">ผลงานที่ 1</span>
+
+            <h3>โครงงานวิทยาศาสตร์</h3>
+
+            <p>
+                <strong>ชื่อผลงาน:</strong>
+                [กรอกชื่อโครงงานวิทยาศาสตร์]
+            </p>
+
+            <p>
+                <strong>รายละเอียด:</strong>
+                [เขียนอธิบายเกี่ยวกับโครงงาน
+                และสิ่งที่ได้เรียนรู้จากการทำงาน]
+            </p>
+
+        </div>
+
+        <!-- ผลงานที่ 2 -->
+        <div class="project-card">
+
+            <span class="project-number">ผลงานที่ 2</span>
+
+            <h3>กิจกรรม / เกียรติบัตร</h3>
+
+            <p>
+                <strong>ชื่อผลงาน:</strong>
+                [กรอกชื่อกิจกรรมหรือเกียรติบัตร]
+            </p>
+
+            <p>
+                <strong>รายละเอียด:</strong>
+                [เขียนอธิบายเกี่ยวกับกิจกรรม
+                และประสบการณ์ที่ได้รับ]
+            </p>
+
+        </div>
+
+        <div class="button-area">
+            <button class="btn back" onclick="prevPage()">
+                ← ย้อนกลับ
+            </button>
+
+            <a href="index.html" class="btn">
+                🏠 กลับหน้าหลัก
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- จุดบอกหน้าปัจจุบัน -->
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
 </div>
-<!-- กล่องผลงานชนที่ ้ิ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชนงาน ิ้ : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn"> กลับหน้าแรก</a>
-</div>
+
+
+<script>
+let currentPage = 1;
+const totalPages = 4;
+
+function showPage(pageNumber) {
+
+    // ซ่อนทุกหน้า
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    // แสดงหน้าที่เลือก
+    document.getElementById("page" + pageNumber)
+        .classList.add("active");
+
+    // เปลี่ยนจุดบอกหน้า
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.classList.toggle("active", index === pageNumber - 1);
+    });
+
+    // เลื่อนขึ้นด้านบน
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+</script>
+
 </body>
 </html>
