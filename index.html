@@ -2,30 +2,141 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>หน้าแนะน;าตัวของฉัน</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>หน้าแนะนำตัว | นาย ภคพล พฤกษ์เพิ่มพูล</title>
+
 <style>
-body { 
-background-color: #FDAB9F; color: #FDAB9F;
-text-align: center; padding: 50px;
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: "Tahoma", sans-serif;
+    background: linear-gradient(135deg, #eaf7ff, #fdf6ff);
+    color: #52677a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
 .card {
-background: pink; border-radius: 50px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
-
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    max-width: 520px;
+    padding: 45px 30px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(150, 180, 200, 0.18);
+    border: 1px solid #ffffff;
 }
-h1 { color: #2c3e50; }
-p { font-size: 18px; line-height: 1.6; }
+
+/* วงกลมตกแต่ง */
+.icon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 20px;
+    background: #dff3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+}
+
+h1 {
+    color: #49677d;
+    font-size: 28px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.name {
+    color: #6b9fc0;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+.highlight {
+    color: #6b9fc0;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    background: #a9d8ee;
+    color: #ffffff;
+    padding: 13px 28px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(150, 190, 220, 0.25);
+}
+
+.btn:hover {
+    background: #8fc7e2;
+    transform: translateY(-3px);
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #a0b5c2;
+}
 </style>
 </head>
+
 <body>
+
 <div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีครับ! ผมช่ื่อ <strong>ภคพล พฤกษ์เพิ่มพูล (Natchanon)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน Business Administration</p>
-<p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-<a href="portfolio.html"style="display:inline-block;background:#3498db;color:white; padding:10px 20px;text-decoration:none; border-radius:5px; margin-top:15px;">👉ดูแฟ้มสะสมผลงานของผม</a>
+
+    <div class="icon">⚙️</div>
+
+    <h1>ยินดีต้อนรับสู่<br>โปรไฟล์ของฉัน</h1>
+
+    <p class="name">
+        นาย ภคพล พฤกษ์เพิ่มพูล
+    </p>
+
+    <p>
+        ขณะนี้กำลังศึกษาอยู่ชั้น
+        <span class="highlight">มัธยมศึกษาปีที่ 6</span>
+    </p>
+
+    <p>
+        แผนการเรียน
+        <span class="highlight">เตรียมวิศวกรรมศาสตร์</span>
+    </p>
+
+    <p>
+        นี่คือเว็บไซต์แนะนำตัวและ<br>
+        แฟ้มสะสมผลงานของผม
+    </p>
+
+    <!-- ปุ่มเข้าสู่ Portfolio -->
+    <a href="portfolio.html" class="btn">
+        📁 ดูแฟ้มสะสมผลงานของผม
+    </a>
+
+    <div class="footer">
+        Welcome to my portfolio ✨
+    </div>
+
 </div>
+
 </body>
 </html>
