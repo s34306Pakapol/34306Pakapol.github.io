@@ -22,6 +22,53 @@ body {
     background: linear-gradient(135deg, #eaf7ff, #fdf6ff);
     color: #52677a;
     min-height: 100vh;
+}
+
+/* ========================= */
+/* แถบเมนูด้านบน (Navbar) */
+/* ========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #16233b;
+    padding: 16px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    border-bottom: 3px solid #a9d8ee;
+}
+
+.navbar .nav-item {
+    background: none;
+    border: none;
+    color: #cfe4f2;
+    font-family: "Tahoma", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: 0.25s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar .nav-item:hover {
+    background: rgba(169, 216, 238, 0.18);
+    color: #ffffff;
+}
+
+.navbar .nav-item.active {
+    background: #a9d8ee;
+    color: #16233b;
+}
+
+.wrap {
     padding: 30px 15px;
 }
 
@@ -175,7 +222,6 @@ p {
     text-align: center;
 }
 
-/* ตรามหาวิทยาลัย */
 .university-logo {
     width: 130px;
     height: 130px;
@@ -340,7 +386,18 @@ p {
 
 @media (max-width: 600px) {
 
-    body {
+    .navbar {
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 4px;
+    }
+
+    .navbar .nav-item {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .wrap {
         padding: 15px;
     }
 
@@ -388,7 +445,6 @@ p {
         font-size: 15px;
     }
 
-    /* ตรามหาวิทยาลัยบนมือถือ */
     .university-logo {
         width: 110px;
         height: 110px;
@@ -399,6 +455,21 @@ p {
 
 <body>
 
+<!-- ========================= -->
+<!-- แถบเมนูด้านบน -->
+<!-- ========================= -->
+
+<nav class="navbar">
+    <a class="nav-item" href="index.html">หน้าแรก</a>
+    <button class="nav-item" data-page="1" onclick="goToPage(1)">คำนำ</button>
+    <button class="nav-item" data-page="2" onclick="goToPage(2)">About Me</button>
+    <button class="nav-item" data-page="3" onclick="goToPage(3)">มหาวิทยาลัย</button>
+    <button class="nav-item" data-page="4" onclick="goToPage(4)">ผลงาน</button>
+    <button class="nav-item" data-page="5" onclick="goToPage(5)">ติดต่อ</button>
+    <button class="nav-item" data-page="6" onclick="goToPage(6)">ขอบคุณ</button>
+</nav>
+
+<div class="wrap">
 <div class="container">
 
     <!-- ========================= -->
@@ -574,7 +645,6 @@ p {
 
         <div class="university-box">
 
-            <!-- ตรามหาวิทยาลัย -->
             <img
                 src="IMG_6707.jpeg"
                 alt="ตรามหาวิทยาลัยธรรมศาสตร์"
@@ -748,6 +818,100 @@ p {
                 ← ย้อนกลับ
             </button>
 
+            <button class="btn" onclick="nextPage()">
+                ถัดไป →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- หน้า 5 : ติดต่อ -->
+    <!-- ========================= -->
+
+    <section class="page" id="page5">
+
+        <div class="page-number">PORTFOLIO • PAGE 5</div>
+
+        <h2>ติดต่อ</h2>
+
+        <div class="info-box">
+
+            <div class="info-row">
+                <div class="info-label">ชื่อ-สกุล</div>
+                <div class="info-value">
+                    นาย ภคพล พฤกษ์เพิ่มพูล
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">เบอร์โทรศัพท์</div>
+                <div class="info-value">
+                    [กรอกเบอร์โทรศัพท์]
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">อีเมล</div>
+                <div class="info-value">
+                    pakapol.260852@gmail.com
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-area">
+
+            <button class="btn back" onclick="prevPage()">
+                ← ย้อนกลับ
+            </button>
+
+            <button class="btn" onclick="nextPage()">
+                ถัดไป →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- หน้า 6 : ขอบคุณ -->
+    <!-- ========================= -->
+
+    <section class="page" id="page6">
+
+        <div class="page-number">PORTFOLIO • PAGE 6</div>
+
+        <h2>ขอบคุณ</h2>
+
+        <div class="intro-text">
+
+            <p class="center">
+                ขอขอบพระคุณที่สละเวลาเข้าชมแฟ้มสะสมผลงานฉบับนี้
+            </p>
+
+            <p class="center">
+                หวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานนี้จะเป็นส่วนหนึ่ง
+                ในการพิจารณาเข้าศึกษาต่อ
+                คณะบริหารธุรกิจ สาขาการค้าระหว่างประเทศ
+                มหาวิทยาลัยธรรมศาสตร์
+            </p>
+
+            <p class="center">
+                <strong>ขอบคุณครับ</strong>
+            </p>
+
+        </div>
+
+        <div class="button-area">
+
+            <button class="btn back" onclick="prevPage()">
+                ← ย้อนกลับ
+            </button>
+
             <a href="index.html" class="btn">
                 🏠 กลับหน้าหลัก
             </a>
@@ -767,16 +931,19 @@ p {
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
 
     </div>
 
+</div>
 </div>
 
 
 <script>
 
 let currentPage = 1;
-const totalPages = 4;
+const totalPages = 6;
 
 function showPage(pageNumber) {
 
@@ -791,6 +958,13 @@ function showPage(pageNumber) {
         dot.classList.toggle(
             "active",
             index === pageNumber - 1
+        );
+    });
+
+    document.querySelectorAll(".navbar .nav-item[data-page]").forEach(item => {
+        item.classList.toggle(
+            "active",
+            item.dataset.page === String(pageNumber)
         );
     });
 
@@ -817,6 +991,18 @@ function prevPage() {
     }
 
 }
+
+function goToPage(pageNumber) {
+    currentPage = pageNumber;
+    showPage(currentPage);
+}
+
+const hashMatch = window.location.hash.match(/page(\d)/);
+if (hashMatch) {
+    currentPage = parseInt(hashMatch[1], 10);
+}
+
+showPage(currentPage);
 
 </script>
 
