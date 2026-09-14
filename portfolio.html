@@ -172,10 +172,25 @@ p {
     border-radius: 20px;
     margin-bottom: 25px;
     border: 1px solid #e4f2fa;
+    text-align: center;
+}
+
+/* ตรามหาวิทยาลัย */
+.university-logo {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 18px;
+}
+
+.university-box h3 {
+    margin-bottom: 18px;
 }
 
 .university-box p {
     margin-bottom: 8px;
+    text-align: left;
 }
 
 .goal-box {
@@ -217,10 +232,6 @@ p {
     font-size: 14px;
     margin-bottom: 12px;
 }
-
-/* ========================= */
-/* รูปภาพเกียรติบัตร */
-/* ========================= */
 
 .project-image {
     width: 100%;
@@ -376,6 +387,12 @@ p {
     .skills-list li {
         font-size: 15px;
     }
+
+    /* ตรามหาวิทยาลัยบนมือถือ */
+    .university-logo {
+        width: 110px;
+        height: 110px;
+    }
 }
 </style>
 </head>
@@ -444,11 +461,9 @@ p {
         </div>
 
         <div class="button-area">
-
             <button class="btn" onclick="nextPage()">
                 ถัดไป →
             </button>
-
         </div>
 
     </section>
@@ -559,6 +574,13 @@ p {
 
         <div class="university-box">
 
+            <!-- ตรามหาวิทยาลัย -->
+            <img
+                src="IMG_6707.jpeg"
+                alt="ตรามหาวิทยาลัยธรรมศาสตร์"
+                class="university-logo"
+            >
+
             <h3>🎓 มหาวิทยาลัยธรรมศาสตร์</h3>
 
             <p>
@@ -621,9 +643,7 @@ p {
         </p>
 
 
-        <!-- ========================= -->
         <!-- ผลงานที่ 1 -->
-        <!-- ========================= -->
 
         <div class="project-card">
 
@@ -659,38 +679,19 @@ p {
 
             <ul class="skills-list">
 
-                <li>
-                    ทักษะการคิดคำนวณและการแก้โจทย์คณิตศาสตร์
-                </li>
-
-                <li>
-                    ทักษะการคิดวิเคราะห์และการแก้ปัญหา
-                </li>
-
-                <li>
-                    ทักษะการคิดอย่างรวดเร็วและแม่นยำ
-                </li>
-
-                <li>
-                    ทักษะการจัดการเวลาในการแข่งขัน
-                </li>
-
-                <li>
-                    ทักษะการมีสมาธิและความรอบคอบ
-                </li>
-
-                <li>
-                    ทักษะการฝึกฝนและพัฒนาตนเอง
-                </li>
+                <li>ทักษะการคิดคำนวณและการแก้โจทย์คณิตศาสตร์</li>
+                <li>ทักษะการคิดวิเคราะห์และการแก้ปัญหา</li>
+                <li>ทักษะการคิดอย่างรวดเร็วและแม่นยำ</li>
+                <li>ทักษะการจัดการเวลาในการแข่งขัน</li>
+                <li>ทักษะการมีสมาธิและความรอบคอบ</li>
+                <li>ทักษะการฝึกฝนและพัฒนาตนเอง</li>
 
             </ul>
 
         </div>
 
 
-        <!-- ========================= -->
         <!-- ผลงานที่ 2 -->
-        <!-- ========================= -->
 
         <div class="project-card">
 
@@ -727,38 +728,19 @@ p {
 
             <ul class="skills-list">
 
-                <li>
-                    ทักษะการสื่อสารและการนำเสนอ
-                </li>
-
-                <li>
-                    ทักษะการถ่ายทอดความรู้ทางวิทยาศาสตร์
-                </li>
-
-                <li>
-                    ทักษะการทำงานร่วมกับผู้อื่น
-                </li>
-
-                <li>
-                    ทักษะการวางแผนและจัดเตรียมนิทรรศการ
-                </li>
-
-                <li>
-                    ทักษะการแก้ปัญหาเฉพาะหน้า
-                </li>
-
-                <li>
-                    ทักษะความรับผิดชอบและความกล้าแสดงออก
-                </li>
+                <li>ทักษะการสื่อสารและการนำเสนอ</li>
+                <li>ทักษะการถ่ายทอดความรู้ทางวิทยาศาสตร์</li>
+                <li>ทักษะการทำงานร่วมกับผู้อื่น</li>
+                <li>ทักษะการวางแผนและจัดเตรียมนิทรรศการ</li>
+                <li>ทักษะการแก้ปัญหาเฉพาะหน้า</li>
+                <li>ทักษะความรับผิดชอบและความกล้าแสดงออก</li>
 
             </ul>
 
         </div>
 
 
-        <!-- ========================= -->
         <!-- ปุ่มนำทาง -->
-        <!-- ========================= -->
 
         <div class="button-area">
 
@@ -776,7 +758,7 @@ p {
 
 
     <!-- ========================= -->
-    <!-- จุดบอกหน้าปัจจุบัน -->
+    <!-- จุดบอกหน้า -->
     <!-- ========================= -->
 
     <div class="dots">
@@ -792,6 +774,7 @@ p {
 
 
 <script>
+
 let currentPage = 1;
 const totalPages = 4;
 
@@ -805,14 +788,16 @@ function showPage(pageNumber) {
         .classList.add("active");
 
     document.querySelectorAll(".dot").forEach((dot, index) => {
-        dot.classList.toggle("active", index === pageNumber - 1);
+        dot.classList.toggle(
+            "active",
+            index === pageNumber - 1
+        );
     });
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-
 }
 
 function nextPage() {
@@ -832,6 +817,7 @@ function prevPage() {
     }
 
 }
+
 </script>
 
 </body>
