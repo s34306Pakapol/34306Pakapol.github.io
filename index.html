@@ -18,10 +18,14 @@ body {
     background: linear-gradient(135deg, #eaf7ff, #fdf6ff);
     color: #52677a;
     min-height: 100vh;
+}
+
+.wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
+    min-height: calc(100vh - 65px);
 }
 
 .card {
@@ -99,6 +103,47 @@ p {
     color: #a0b5c2;
 }
 
+/* แถบเมนูด้านบน */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #16233b;
+    padding: 16px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    border-bottom: 3px solid #a9d8ee;
+}
+
+.navbar .nav-item {
+    background: none;
+    border: none;
+    color: #cfe4f2;
+    font-family: "Tahoma", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: 0.25s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar .nav-item:hover {
+    background: rgba(169, 216, 238, 0.18);
+    color: #ffffff;
+}
+
+.navbar .nav-item.active {
+    background: #a9d8ee;
+    color: #16233b;
+}
+
 /* ปรับหน้าจอมือถือ */
 @media (max-width: 600px) {
     body {
@@ -127,6 +172,17 @@ p {
 
 <body>
 
+<nav class="navbar">
+    <a class="nav-item active" href="index.html">หน้าแรก</a>
+    <a class="nav-item" href="portfolio.html#page1">คำนำ</a>
+    <a class="nav-item" href="portfolio.html#page2">About Me</a>
+    <a class="nav-item" href="portfolio.html#page3">มหาวิทยาลัย</a>
+    <a class="nav-item" href="portfolio.html#page4">ผลงาน</a>
+    <a class="nav-item" href="portfolio.html#page5">ติดต่อ</a>
+    <a class="nav-item" href="portfolio.html#page6">ขอบคุณ</a>
+</nav>
+
+<div class="wrap">
 <div class="card">
 
     <!-- รูปโปรไฟล์ -->
@@ -161,6 +217,7 @@ p {
         Welcome to my portfolio ✨
     </div>
 
+</div>
 </div>
 
 </body>
